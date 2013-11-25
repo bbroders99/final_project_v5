@@ -1,0 +1,48 @@
+<div class="page-header">
+  <h1>Ideas</h1>
+</div>
+
+<p><%= link_to 'Add a New Idea', new_idea_url, class: 'btn btn-primary' %></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Post date</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Category</th>
+      <th>Size</th>
+      <th>Status</th>
+      <th>Completion date</th>
+      <th>Rating</th>
+      <th>Buyer</th>
+      <th>Artist</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ideas.each do |idea| %>
+      <tr>
+        <td><%= idea.post_date %></td>
+        <td><%= idea.title %></td>
+        <td><%= idea.description %></td>
+        <td><%= idea.price %></td>
+        <td><%= idea.category %></td>
+        <td><%= idea.size %></td>
+        <td><%= idea.status %></td>
+        <td><%= idea.completion_date %></td>
+        <td><%= idea.rating %></td>
+        <td><%= idea.buyer_id %></td>
+        <td><%= idea.artist_id %></td>
+        <td><%= link_to '<i class="fa fa-search-plus"></i>'.html_safe, idea_url(idea), class: 'btn btn-primary' %></td>
+        <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_idea_url(idea), class: 'btn btn-warning' %></td>
+        <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, idea_url(idea), method: 'delete', data: { confirm: "Do you really want to delete this idea?" }, class: 'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

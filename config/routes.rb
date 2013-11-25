@@ -1,4 +1,7 @@
 FinalProjectV5::Application.routes.draw do
+
+  root "ideas#index"
+
   # Routes for the Bid resource:
   # CREATE
   get '/bids/new', controller: 'bids', action: 'new', as: 'new_bid'

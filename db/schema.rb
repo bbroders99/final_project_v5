@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131125070346) do
+ActiveRecord::Schema.define(version: 20131126045419) do
 
   create_table "artists", force: true do |t|
     t.string "first_name"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20131125070346) do
   create_table "bids", force: true do |t|
     t.integer "idea_id"
     t.integer "artist_id"
+    t.boolean "accepted"
   end
 
   create_table "buyers", force: true do |t|
